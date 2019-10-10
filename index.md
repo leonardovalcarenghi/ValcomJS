@@ -17,18 +17,18 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ```markdown
 
 **POST**
-`code here`
+`Code`code here
 
 #Exemplo:
 
 **GET**
-`code here`
+`Code`code here
 
 #Exemplo:
-`$.Get('https://google.com', response => {
-        $.Console(response);
-    });
-`
+`Code`$.Get('https://google.com', response => {
+`Code`        $.Console(response);
+`Code`    });
+
 
 
 
