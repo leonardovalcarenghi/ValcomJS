@@ -1,4 +1,7 @@
-## Welcome to GitHub Pages
+## Valcom JavaScript Library
+Versão: 1.0
+Beta: Sim
+
 
 You can use the [editor on GitHub](https://github.com/leonardovalcarenghi/ValcomJS/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
