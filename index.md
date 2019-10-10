@@ -1,7 +1,10 @@
 ## Valcom JavaScript Library
-Versão: 1.0
+Versão: 1.0 
+
 Beta: Sim
 
+ValcomJS Freamwork é uma nova biblioteca de JavaScript para auxiliar você com algumas tarefas bem interessantes.
+O conceito de usabilidade vem do jQuery, mas o ValcomJS é totalmente desenvolvido em JavaScript Vanilla (puro) e ajuda desde a configurar elementos no documento, trabalhar com listas e fazer requisições de maneira fácil.
 
 You can use the [editor on GitHub](https://github.com/leonardovalcarenghi/ValcomJS/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
