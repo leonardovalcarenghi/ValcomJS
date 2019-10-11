@@ -71,6 +71,13 @@ let ValcomListConstructor = function () {
         let list = _$t.Array;
         return 'método não implementado.'
     }
+
+    //Juntar Itens da Array em um único objeto:
+    _$t.Join = (separator = ',') => {
+        let list = _$t.Array;
+        let newItem = list.join(separator);
+        return newItem;
+    }
 }
 
 class ValcomList extends ValcomListConstructor {

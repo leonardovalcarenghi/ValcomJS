@@ -177,7 +177,7 @@ _Valcom.Initialize();
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 
-$('#Botao').Click(function () {
+$('#Botao').Click(() => {
     alert('clicou na caixa de texto');
 });
 
