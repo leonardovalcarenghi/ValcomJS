@@ -84,7 +84,8 @@ let _Valcom = {
     },
 
     GetElements: (elementsString) => {
-        let elementsArray = elementsString.replace(/ /g, '').split(_Valcom.Selector.SEPARATOR);
+        // let elementsArray = elementsString.replace(/ /g, '').split(_Valcom.Selector.SEPARATOR);
+        let elementsArray = elementsString.split(_Valcom.Selector.SEPARATOR);
         return elementsArray;
     }
 
@@ -153,22 +154,28 @@ let _$_valcomMethods_$String = (_queryString) => {
     //     // let
     // });
 
+
+
+    //Nova Instância do ConstrutorSelector:
+    let _valcom = new ValcomSelector(queryString);
+
+
     //Tipo de Seletor:
     let _selector = _Valcom.Selector.Get(queryString);
     let _elementIdentifier = queryString.replace(_selector, '');
 
     if (_selector == _Valcom.Selector.ID) {
         var element = document.getElementById(_elementIdentifier)
-        if (element == null) { $.LOG('Elemento não encontrado'); return; }
-    }
-    if (_selector == _Valcom.Selector.CLASS) {
-        var element = document.getElementsByClassName(_elementIdentifier)[0]
+        _valcom.ID = _elementIdentifier;
         if (element == null) { $.LOG('Elemento não encontrado'); return; }
     }
 
-    //Nova Instância do ConstrutorSelector:
-    let _valcom = new ValcomSelector(queryString);
-    _valcom.Name = _elementIdentifier;
+    if (_selector == _Valcom.Selector.CLASS) {
+        var element = document.getElementsByClassName(_elementIdentifier)[0]
+        _valcom.CLASS = _elementIdentifier;
+        if (element == null) { $.LOG('Elemento não encontrado'); return; }
+    }
+
     _valcom.Type = element.tagName;
     _valcom.Selector = _selector;
     _valcom.SelectorFull = queryString;
