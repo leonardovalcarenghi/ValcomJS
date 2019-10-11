@@ -69,7 +69,9 @@ let ValcomListConstructor = function () {
     //Converter Array em String:
     _$t.ToString = () => {
         let list = _$t.Array;
-        return 'método não implementado.'
+        return JSON.stringify(list);
+        //return list;
+        //return 'método não implementado.'
     }
 
     //Juntar Itens da Array em um único objeto:

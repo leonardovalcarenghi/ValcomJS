@@ -1,9 +1,7 @@
 let ValcomItemConstructor = function () {
-    let _t = this;
 
     //Inicializador:
     let _$t = this;
-
 
     // ############### Métodos do HTML ############### //
     _$t.HTML = {
@@ -68,7 +66,6 @@ let ValcomItemConstructor = function () {
             }
         }
     }
-
 
     // ############### Métodos de Atributos ############### //
     _$t.Attr = {
@@ -155,10 +152,8 @@ let ValcomItemConstructor = function () {
 
     }
 
-
     // ############### Métodos de Classes ############### //
     _$t.Class = {
-
         //Adicionar Classe
         Add: (_className) => {
             /*obter id e classe*/
@@ -218,8 +213,21 @@ let ValcomItemConstructor = function () {
                 return _contains;
             }
         },
+    }
+
+
+    _$t.Click = (_callBack) => {
 
     }
+
+    _$t.Click['Call'] = () => {
+
+    }
+
+    _$t.Click['RemoveEvent'] = () => {
+
+    }
+
 
 
     // ############### Métodos de Style ############### //
@@ -371,9 +379,9 @@ let ValcomItemConstructor = function () {
     // }
 
     // Setar/Obter Texto de Caixas de Texto
-    _t.Text = (value = null) => {
-        return 'retorno da função'
-    }
+    // _t.Text = (value = null) => {
+    //     return 'retorno da função'
+    // }
 
 
     // Trabalhando com Atributos dos Elementos
@@ -519,69 +527,69 @@ let ValcomItemConstructor = function () {
     // }
 
     //Exibir Elemento:
-    _t.Show = () => {
-        //Nome e Query do Elemento:
-        let _name = _t.GetThisName();
-        let _query = _t.GetThisQuery();
+    // _t.Show = () => {
+    //     //Nome e Query do Elemento:
+    //     let _name = _t.GetThisName();
+    //     let _query = _t.GetThisQuery();
 
-        //ID
-        if (_query == $Valcom.Selector.ID) {
-            let element = document.getElementById(_name);
-            $[_query + _name].Attr.Remove('hidden');
-            element.style.display = 'block';
-        }
+    //     //ID
+    //     if (_query == $Valcom.Selector.ID) {
+    //         let element = document.getElementById(_name);
+    //         $[_query + _name].Attr.Remove('hidden');
+    //         element.style.display = 'block';
+    //     }
 
-        //CLASS
-        if (_query == $Valcom.Selector.CLASS) {
-            let elementsArray = document.getElementsByClassName(_name);
-            for (let index = 0; index < elementsArray.length; index++) {
-                const elementClass = elementsArray[index];
-                elementClass.removeAttribute('hidden');
-                elementClass.style.display = 'block';
-            }
+    //     //CLASS
+    //     if (_query == $Valcom.Selector.CLASS) {
+    //         let elementsArray = document.getElementsByClassName(_name);
+    //         for (let index = 0; index < elementsArray.length; index++) {
+    //             const elementClass = elementsArray[index];
+    //             elementClass.removeAttribute('hidden');
+    //             elementClass.style.display = 'block';
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
-    //Ocultar Elemento:
-    _t.Hide = () => {
-        //Nome e Query do Elemento:
-        let _name = _t.GetThisName();
-        let _query = _t.GetThisQuery();
+    // //Ocultar Elemento:
+    // _t.Hide = () => {
+    //     //Nome e Query do Elemento:
+    //     let _name = _t.GetThisName();
+    //     let _query = _t.GetThisQuery();
 
-        //ID
-        if (_query == $Valcom.Selector.ID) {
-            let element = document.getElementById(_name);
+    //     //ID
+    //     if (_query == $Valcom.Selector.ID) {
+    //         let element = document.getElementById(_name);
 
-            $[_query + _name].Attr.Set('hidden', 'hidden');
-            element.style.display = 'none';
-        }
+    //         $[_query + _name].Attr.Set('hidden', 'hidden');
+    //         element.style.display = 'none';
+    //     }
 
-        //CLASS
-        if (_query == $Valcom.Selector.CLASS) {
-            let elementsArray = document.getElementsByClassName(_name);
-            for (let index = 0; index < elementsArray.length; index++) {
-                const elementClass = elementsArray[index];
-                elementClass.setAttribute('hidden', 'hidden');
-                elementClass.style.display = 'none';
-            }
+    //     //CLASS
+    //     if (_query == $Valcom.Selector.CLASS) {
+    //         let elementsArray = document.getElementsByClassName(_name);
+    //         for (let index = 0; index < elementsArray.length; index++) {
+    //             const elementClass = elementsArray[index];
+    //             elementClass.setAttribute('hidden', 'hidden');
+    //             elementClass.style.display = 'none';
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
 
 
     /* = = = = = EVENTOS DO COMPONENTE = = = = = */
 
 
-    _t.Events = {
-        Click: {
-            Remove: () => { }
-        },
+    // _t.Events = {
+    //     Click: {
+    //         Remove: () => { }
+    //     },
 
-        KeyPress: {}
+    //     KeyPress: {}
 
-    }
+    // }
 
     //Evento de Clique do Elemento
     // _t.Click = (callBack) => {
@@ -591,20 +599,20 @@ let ValcomItemConstructor = function () {
 
 
     //Key Up Evento
-    _t.KeyUp = (callBack) => {
+    // _t.KeyUp = (callBack) => {
 
-    }
+    // }
 
 
-    //Key Down Evento
-    _t.KeyDown = (callBack) => {
+    // //Key Down Evento
+    // _t.KeyDown = (callBack) => {
 
-    }
+    // }
 
-    //Key Press Evento
-    _t.KeyPress = (callBack) => {
+    // //Key Press Evento
+    // _t.KeyPress = (callBack) => {
 
-    }
+    // }
 
 }
 
