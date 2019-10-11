@@ -123,15 +123,26 @@ let _$_valcomMethods_$Array = (_array) => {
 
 //QueryString
 let _$_valcomMethods_$String = (_queryString) => {
+
     // if (_Valcom.Logs) { console.log('Object is a String'); }
 
     let queryString = _queryString;
 
     //Verificar se recebeu o selector:
-    if (queryString == undefined || queryString == null || queryString == '') { return 'Seletor não foi informado.'; }
+    if (queryString == undefined || queryString == null || queryString == '') {
+        return 'Seletor não foi informado.';
+    }
 
     //Verificar se selector no elemento é válido:
-    if (!_Valcom.Selector.Check(queryString)) { $.LOG('Seletor é inválido'); return; }
+    if (!_Valcom.Selector.Check(queryString)) {
+
+        let _valcomString = new ValcomString();
+        _valcomString.String = _queryString;
+        return _valcomString;
+
+        // $.LOG('Seletor é inválido'); return;    
+
+    }
 
 
     //Obter Arrar dos Elementos [PRÓXIMA VERSÃO]:
