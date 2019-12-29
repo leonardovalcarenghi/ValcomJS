@@ -34,12 +34,14 @@ let Valcom = function () {
     let _t = this;
 
 
+    //Obter objects recebidos por arguments:
+    let objects = Array.prototype.slice.call(arguments);
 
     //Obter lista de elementos no DOM pelo objeto informado:
+    let elements = _getElementsByObjects(objects);
 
 
-
-    _t.Class = new $ValcomClass(parameters);
+    _t.Class = new $ValcomClass(elements);
 
 
     return _t;
@@ -52,6 +54,8 @@ class $ValcomClass {
 
     constructor(_elements = []) {
         this.Properties.Elements = _elements;
+
+        console.log('elements q chegou na class', _elements);
     }
 
     Properties = {
@@ -95,15 +99,6 @@ class $ValcomClass {
 
 }
 
-let CLASS = {
-
-    Add: () => { },
-    Remove: () => { },
-    GetElements: () => { },
-    Have: () => { },
-
-}
-
 
 
 
@@ -111,28 +106,37 @@ let CLASS = {
 
 
 
-function getElementsByObjects() {
-    let objects = Array.prototype.slice.call(arguments);
-    console.log(objects);
+function _getElementsByObjects(_arguments) {
+    let objects = _arguments;
+    // console.log(objects);
 
     let elements = [];
 
     objects.forEach(obj => {
-        obj = ''
-        console.log('element', obj); let a = '';
-        a.substring(0, 1)
+
+        //Obter identificador do objeto:
         let identifierObject = obj.substring(0, 1)
 
+        //ID:
+        if (identifierObject == '#') {
+            obj = obj.replace('#', '');
+            let E = document.getElementById(obj);
+            if (E != null) { elements.push(E); }
+        }
 
-        //obter da class se tiver:
-        let byClass = document.getElementsByClassName(obj);
-        elements.push(byClass);
-
-        //ober do id se tiver:
-        let E = document.getElementById(element);
-
-
+        //Classe:
+        if (identifierObject == '.') {
+            obj = obj.replace('.', '');
+            let byClass = document.getElementsByClassName(obj);
+            console.log('byClass', byClass)
+            for (let index = 0; index < byClass.length; index++) {
+                const E = byClass[index];
+                if (E != null) { elements.push(E); }
+            }
+        }
     });
+
+    return elements;
 
 }
 
